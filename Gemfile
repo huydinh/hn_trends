@@ -32,7 +32,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'ruby-hackernews'
+gem 'ruby-hackernews', git: 'https://github.com/bolthar/ruby-hackernews.git'
 gem 'haml'
 
 # Use ActiveModel has_secure_password
