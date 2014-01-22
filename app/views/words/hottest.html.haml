@@ -1,0 +1,13 @@
+%table
+  %thead
+    %th Text
+    %th Count
+    %th Point
+  %tbody
+  - @ranked_words.each do |word_with_point|
+    - word = word_with_point.first
+    - point = word_with_point.last
+    %tr
+      %td= link_to word.text, word_path(word)
+      %td= word.count
+      %td= point

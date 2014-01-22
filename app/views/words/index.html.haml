@@ -1,0 +1,10 @@
+= link_to 'Fetch new entries', fetch_entries_path
+%table
+  %thead
+    %th Text
+    %th Count
+  %tbody
+  - @words.each do |word|
+    %tr
+      %td= link_to word.text, word_path(word)
+      %td= word.count

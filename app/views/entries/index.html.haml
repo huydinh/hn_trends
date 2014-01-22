@@ -1,0 +1,11 @@
+%table
+  %thead
+    %th Title
+    %th href
+    %th hn_id
+  %tbody
+  - @entries.each do |entry|
+    %tr
+      %td= entry.title
+      %td= link_to entry.href, entry.href
+      %td= entry.hn_id

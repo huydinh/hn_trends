@@ -3,7 +3,18 @@ HnTrends::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  resources :words do
+    collection do
+      get :hottest
+    end
+  end
+
+  resources :entries do
+    collection do
+      get :fetch
+    end
+  end
+  root 'words#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -39,7 +50,7 @@ HnTrends::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
