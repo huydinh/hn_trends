@@ -5,7 +5,9 @@ class Entry < ActiveRecord::Base
   scope :sorted, -> { order('hn_id desc') }
 
   def index_title
-    title.downcase.split(' ').each do |text|
+    indexer = Indexer.new(title)
+
+    indexer.to_words.each do |text|
       word = Word.find_by_text(text)
       if word
         word.increment!(:count)

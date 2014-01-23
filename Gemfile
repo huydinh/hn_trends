@@ -35,6 +35,8 @@ end
 gem 'ruby-hackernews', git: 'https://github.com/bolthar/ruby-hackernews.git'
 gem 'haml'
 
+gem 'stopwords-filter', git: 'https://github.com/brenes/stopwords-filter.git'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
