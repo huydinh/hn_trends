@@ -1,7 +1,9 @@
+= form_tag hottest_in_range_words_path do
+  = select_tag :from_date, options_for_select(from_date_options)
+  = submit_tag 'Filter'
 %table
   %thead
     %th Text
-    %th Count
     %th Point
   %tbody
   - @ranked_words.each do |word_with_point|
@@ -9,5 +11,4 @@
     - point = word_with_point.last
     %tr
       %td= link_to word.text, word_path(word)
-      %td= word.count
       %td= point

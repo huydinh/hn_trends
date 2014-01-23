@@ -10,7 +10,7 @@
     - @word.entries.sorted.each do |entry|
       %tr
         %td= entry.title
-        %td= link_to entry.href
+        %td= link_to entry.href, entry.href
         %td= entry.hn_id
         %td= entry.created_at
 

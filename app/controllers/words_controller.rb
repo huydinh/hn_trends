@@ -8,6 +8,14 @@ class WordsController < ApplicationController
   end
 
   def hottest
-    @ranked_words = Word.ranked
+    if params[:from_date].present?
+      @ranked_words = Word.ranked_in_range(params[:from_date])
+    else
+      @ranked_words = Word.ranked
+    end
+  end
+
+  def hottest_in_range
+    redirect_to hottest_words_path(from_date: params[:from_date])
   end
 end

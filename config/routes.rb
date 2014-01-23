@@ -6,6 +6,7 @@ HnTrends::Application.routes.draw do
   resources :words do
     collection do
       get :hottest
+      post :hottest_in_range
     end
   end
 
