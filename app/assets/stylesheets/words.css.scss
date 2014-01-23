@@ -1,3 +1,19 @@
 // Place all the styles related to the words controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.item {
+  margin: 10px;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+}
+
+@for $i from 0 through 10 {
+  .item-#{$i} {
+    width: 50px * $i;
+    height: 50px * $i;
+    background-color: rgb(255 - $i * 10, 255 - $i * 3, 255 - $i);
+    border-radius: 50px * $i / 2;
+  }
+}
