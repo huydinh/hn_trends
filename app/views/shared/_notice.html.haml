@@ -1,0 +1,4 @@
+- [:notice, :alert].each do |key|
+  - if flash[key]
+    .alert-box
+      = send(key)

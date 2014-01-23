@@ -4,7 +4,11 @@ class EntriesController < ApplicationController
   end
 
   def fetch
-    Entry.fetch
-    redirect_to words_path
+    begin
+      Entry.fetch
+      redirect_to words_path
+    rescue Exception => e
+      redirect_to words_path, notice: "There is something wrong when fetching: #{e.message}"
+    end
   end
 end
