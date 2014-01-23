@@ -1,14 +1,17 @@
-= form_tag hottest_in_range_words_path do
-  = select_tag :from_date, options_for_select(from_date_options)
-  = submit_tag 'Filter'
-%table
-  %thead
-    %th Text
-    %th Point
-  %tbody
-  - @ranked_words.each do |word_with_point|
-    - word = word_with_point.first
-    - point = word_with_point.last
-    %tr
-      %td= link_to word.text, word_path(word)
-      %td= point
+.row
+  = form_tag hottest_in_range_words_path do
+    .row.collapse
+      .large-6.columns
+        .small-10.columns
+          = select_tag :from_date, options_for_select(from_date_options)
+        .small-2.columns
+          = submit_tag 'Filter', class: 'button postfix'
+.row
+  #container
+    - @ranked_words.each do |word_with_point|
+      - word = word_with_point.first
+      - point = word_with_point.last
+      .item{ class: width_for_point(point) }
+        .text= link_to word.text, word_path(word)
+        .value= point
+
