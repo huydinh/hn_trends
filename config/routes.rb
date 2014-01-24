@@ -17,7 +17,7 @@ HnTrends::Application.routes.draw do
       get :fetch
     end
   end
-  root 'words#index'
+  root 'words#hottest'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
