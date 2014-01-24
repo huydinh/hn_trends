@@ -1,9 +1,8 @@
-%table
-  %thead
-    %th Text
-    %th Count
-  %tbody
-  - @words.each do |word|
-    %tr
-      %td= link_to word.text, word_path(word)
-      %td= word.count
+.word.left
+  Text
+  %span (count)
+- @words.each do |word|
+  .word.left
+    = link_to word.text, word_path(word)
+    %span= "(#{word.count})"
+
