@@ -20,7 +20,7 @@ class Entry < ActiveRecord::Base
   end
 
   def self.fetch
-    @entries = RubyHackernews::Entry.all
+    @entries = RubyHackernews::Entry.all(3)
 
     @entries.each do |hn_entry|
       begin
