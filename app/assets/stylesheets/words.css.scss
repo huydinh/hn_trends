@@ -15,5 +15,6 @@
     height: 50px * $i;
     background-color: rgb(255 - $i * 10, 255 - $i * 3, 255 - $i);
     border-radius: 50px * $i / 2;
+    padding: 25px * $i / 2;
   }
 }
