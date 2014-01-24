@@ -13,6 +13,7 @@ class WordsController < ApplicationController
     else
       @ranked_words = Word.ranked
     end
+    @ranked_words = @ranked_words.take(Word::DEFAULT_LIMIT)
   end
 
   def hottest_in_range

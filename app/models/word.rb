@@ -21,7 +21,7 @@ class Word < ActiveRecord::Base
   end
 
   def self.ranked
-    res = all.limit(DEFAULT_LIMIT).map do |word|
+    res = all.map do |word|
       [word, word.point]
     end
 
@@ -31,7 +31,7 @@ class Word < ActiveRecord::Base
   def self.ranked_in_range(from_date, to_date = DateTime.now)
     from_date = from_date.to_i.days.ago
 
-    res = all.limit(DEFAULT_LIMIT).map do |word|
+    res = all.map do |word|
       [word, word.point_in_range(from_date, to_date)]
     end
 
