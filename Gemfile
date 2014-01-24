@@ -33,6 +33,7 @@ end
 gem 'ruby-hackernews', git: 'https://github.com/bolthar/ruby-hackernews.git'
 gem 'haml'
 gem 'foundation-rails'
+gem "font-awesome-rails"
 
 gem 'stopwords-filter', git: 'https://github.com/brenes/stopwords-filter.git'
 
