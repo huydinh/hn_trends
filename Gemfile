@@ -38,6 +38,8 @@ gem 'foundation-rails'
 
 gem 'stopwords-filter', git: 'https://github.com/brenes/stopwords-filter.git'
 
+gem 'rails_admin'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -47,9 +49,10 @@ gem 'stopwords-filter', git: 'https://github.com/brenes/stopwords-filter.git'
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
 group :development do
+  gem 'byebug'
   gem 'quiet_assets'
 end
+
+
+gem "devise"
