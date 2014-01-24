@@ -1,6 +1,6 @@
 class Entry < ActiveRecord::Base
-  has_many :words, through: :references, dependent: :destroy
-  has_many :references, dependent: :destroy
+  has_many :words, through: :word_references, dependent: :destroy
+  has_many :word_references, dependent: :destroy
 
   scope :sorted, -> { order('hn_id desc') }
 

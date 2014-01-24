@@ -24,13 +24,15 @@ ActiveRecord::Schema.define(version: 20140121124637) do
   add_index "entries", ["hn_id"], name: "index_entries_on_hn_id", unique: true
 
   create_table "references", force: true do |t|
+
+  create_table "word_references", force: true do |t|
     t.integer  "word_id"
     t.integer  "entry_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "references", ["word_id", "entry_id"], name: "index_references_on_word_id_and_entry_id", unique: true
+  add_index "word_references", ["word_id", "entry_id"], name: "index_word_references_on_word_id_and_entry_id", unique: true
 
   create_table "words", force: true do |t|
     t.string   "text"

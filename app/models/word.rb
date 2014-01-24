@@ -1,11 +1,11 @@
 class Word < ActiveRecord::Base
-  has_many :entries, through: :references, dependent: :destroy
-  has_many :references, dependent: :destroy
+  has_many :word_references, dependent: :destroy
+  has_many :entries, through: :word_references, dependent: :destroy
   DEFAULT_LIMIT = 20
 
   def point
     res = 0.0
-    references.each do |reference|
+    word_references.each do |reference|
       res += reference.point
     end
     res
@@ -13,7 +13,7 @@ class Word < ActiveRecord::Base
 
   def point_in_range(from_date, to_date)
     res = 0.0
-    references.where('? <= created_at and created_at <= ?', from_date, to_date).each do |reference|
+    word_references.where('? <= created_at and created_at <= ?', from_date, to_date).each do |reference|
       res += reference.point
     end
 

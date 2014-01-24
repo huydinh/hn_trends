@@ -1,4 +1,4 @@
-class Reference < ActiveRecord::Base
+class WordReference < ActiveRecord::Base
   belongs_to :word
   belongs_to :entry
 
