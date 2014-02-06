@@ -1,3 +1,6 @@
+%p
+  %label Number of words:
+  %span= @words.count
 - @words.each do |word|
   .word.left
     = link_to word.text, word_path(word)
