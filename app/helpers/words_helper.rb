@@ -14,4 +14,12 @@ module WordsHelper
 
     "item-#{point}"
   end
+
+  def hn_link(href)
+    if href.match(/^item\?id=\d+/)
+      "https://news.ycombinator.com/#{href}"
+    else
+      href
+    end
+  end
 end

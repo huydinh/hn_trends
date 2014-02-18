@@ -10,7 +10,7 @@
     - @word.entries.sorted.each do |entry|
       %tr
         %td= entry.title
-        %td= link_to entry.href, entry.href
+        %td= link_to hn_link(entry.href), hn_link(entry.href), target: '_blank'
         %td= entry.hn_id
         %td= "#{distance_of_time_in_words(Time.now, entry.created_at)} ago"
 
