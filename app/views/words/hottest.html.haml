@@ -11,4 +11,4 @@
     - word = word_with_point.first
     - point = word_with_point.last
     %span(data-weight="#{point.to_i}")
-      = link_to word.text, word_path(word)
+      = link_to word.text, word_path(word), target: '_blank'
