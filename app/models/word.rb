@@ -1,7 +1,7 @@
 class Word < ActiveRecord::Base
   has_many :word_references, dependent: :destroy
   has_many :entries, through: :word_references, dependent: :destroy
-  DEFAULT_LIMIT = 20
+  DEFAULT_LIMIT = 40
 
   def point
     res = 0.0

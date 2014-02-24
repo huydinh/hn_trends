@@ -6,11 +6,9 @@
           = select_tag :from_date, options_for_select(from_date_options)
         .small-2.columns
           = submit_tag 'Filter', class: 'button postfix'
-.row
-  #container
-    - @ranked_words.each do |word_with_point|
-      - word = word_with_point.first
-      - point = word_with_point.last
-      .item{ class: width_for_point(point) }
-        .text= link_to word.text, word_path(word)
-        .value= point
+#wordcloud
+  - @ranked_words.each do |word_with_point|
+    - word = word_with_point.first
+    - point = word_with_point.last
+    %span(data-weight="#{point.to_i}")
+      = link_to word.text, word_path(word)
