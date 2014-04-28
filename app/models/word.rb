@@ -21,11 +21,11 @@ class Word < ActiveRecord::Base
   end
 
   def self.ranked
-    res = all.map do |word|
+    words = all.order('count desc').limit(DEFAULT_LIMIT)
+
+    res = words.map do |word|
       [word, word.point]
     end
-
-    res.sort_by{|o| o.last }.reverse
   end
 
   def self.ranked_in_range(from_date, to_date = DateTime.now)
