@@ -7,7 +7,7 @@
         .small-2.columns
           = submit_tag 'Filter', class: 'button postfix'
 #wordcloud
-  - @ranked_words.value.each do |word_with_point|
+  - @ranked_words.each do |word_with_point|
     - word = word_with_point.first
     - point = word_with_point.last
     %span(data-weight="#{point.to_i}")
